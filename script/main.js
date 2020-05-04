@@ -6,18 +6,38 @@ var searchButton = $("#find");
 
 var filmInput = $(".input_area");
 
-var movieList = $(".all_movies");
+var movieList = $(".movies");
 
-var moviesAPI= 'https://api.themoviedb.org/3/search/movie';
+var newSearch = filmInput.val().toLowerCase().trim();
 
 // Init Handlebars
-
+var source = $('#film-template').html();
+var template = Handlebars.compile(source);
 
 
 searchButton.click(function(){
+  newSearch = filmInput.val().toLowerCase().trim();
+  callAPI(newSearch,template,filmInput);
+ 
+})
 
-  var newSearch = filmInput.val().toLowerCase().trim();
+filmInput.keyup(function(event){
+  newSearch = filmInput.val().toLowerCase().trim();
+  if(event.which === 13){
+    callAPI(newSearch,template,filmInput);
 
+  }
+})
+  filmInput.val('');
+});    // doc ready end
+
+// Functions
+
+function callAPI(newSearch,template,filmInput){
+
+  console.log(newSearch)
+  var moviesAPI = 'https://api.themoviedb.org/3/search/movie';
+  var movieList = $(".movies");
   $.ajax({
     url: moviesAPI,
     method: 'GET',
@@ -27,8 +47,8 @@ searchButton.click(function(){
     },
     success: function(res) {
       var films = res.results;
-      var source = $('#film-template').html();
-      var template = Handlebars.compile(source);
+      movieList.html('');
+      
 
       for(var i = 0; i < films.length; i++){
         
@@ -38,9 +58,10 @@ searchButton.click(function(){
 					lang: films[i].original_language,
 					average: films[i].vote_average
         }
-        console.log(template)
-        var html = template(context);
+        
+      var html = template(context);
         movieList.append(html);
+        filmInput.val('');
       }
 
     },
@@ -48,37 +69,4 @@ searchButton.click(function(){
       console.log('Errore nella ricerca');
     }
   });
-
-
-
-
-
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-});    // doc ready end
+}
