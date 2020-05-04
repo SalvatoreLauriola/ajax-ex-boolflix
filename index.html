@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boolflix</title>
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+  <div class="input-part">
+    <input class="input_area"  type="text"placeholder="Cerca un film">
+  </div>
+  <button id="find">Search</button>
+
+  <div class="movies">
+    <ul class="all_movies">
+      
+
+    </ul>
+  </div>
+
+  <script id="film-template" type= "text/x-handlebars-template"></script>
+    <div class="film">
+      <ul class="list_film">
+
+      <li>{{ title }}</li>
+      <li>{{ originalTitle }}</li>
+      <li>{{ lang }}</li>
+      <li>{{ average }}</li>
+      
+      </ul>
+     
+    </div>
+  </script> 
+  
+
+
+
+
+
+
+
+ 
+ 
+  <!-- JS -->
+ <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js'></script>
+ <script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js'></script>
+ <script src="script/main.js"></script>
+</body>
+</html>
