@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Boolflix</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
   <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
@@ -13,6 +14,8 @@
   </div>
   <button id="find">Search</button>
 
+
+  <div class="container"></div>
   <div class="movies">
     
       
@@ -24,10 +27,27 @@
     <div class="film">
       <ul class="list_film">
 
-        <li>Titolo: {{ title }}</li>
-        <li>Titolo Originale: {{ originalTitle }}</li>
-        <li>Lingua: {{ lang }}</li>
-        <li>Media dei voti: {{ average }}</li>
+        <li> 
+          <span>Titolo:</span> 
+          <span>{{ title }}</span>  
+        </li>
+        <li> 
+          <span>Titolo Originale:</span> 
+          <span>{{ originalTitle }}</span>  
+        </li>
+        <li> 
+          <span>Lingua:</span> 
+          <span>{{{ lang }}}</span>  
+        </li>
+        <li> 
+          <span>Media dei voti:</span> 
+          <span>{{{ average }}}</span>  
+        </li>
+        <li> 
+          <span>Tipologia:</span> 
+          <span>{{ type }}</span>  
+        </li>
+        
       
       </ul>
      
