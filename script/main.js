@@ -1,6 +1,7 @@
 $(document).ready(function () {   //doc ready start
  
 // Refs
+
 var moviesAPI = 'https://api.themoviedb.org/3/search/movie';
 
 var seriesAPI = 'https://api.themoviedb.org/3/search/tv';
@@ -128,8 +129,10 @@ function callAPI(newSearch,template,filmInput,url,){
 
 function print(template, films, movieList, type){
   for(var i = 0; i < films.length; i++){
-    
+    var img = 'https://image.tmdb.org/t/p/w342';
+    var noImg = 'img/no-poster.png';
     var title, originalTitle;
+    var poster = films[i].poster_path;
 
     if(type == 'Serie Tv') {
       title = films[i].name;
@@ -138,16 +141,23 @@ function print(template, films, movieList, type){
       title = films[i].title;
       originalTitle= films[i].original_title;
     }
-           
+    if(poster == null){
+      poster = noImg;
+
+    }else {
+      poster= img + poster;
+    } 
     var context = {
       originalTitle: originalTitle,
       title: title,
       lang: flag(films[i].original_language),
       average: stars(films[i].vote_average),
       type: type,
-      poster: films[i].poster_path
+      poster: poster,
+      description: films[i].overview
       }
     
+     
     var html = template(context);
     movieList.append(html);
     }

@@ -4,11 +4,63 @@
   padding: 0;
 }
 
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
 
 .flag img {
   width: 20px;
 }
 
-/* .film > img{
-  width: 100px;
-} */
+.list_film {
+  position: absolute;
+  top: 0;
+  right: 20%;
+}
+
+.style {
+ display: flex; 
+ justify-content: space-between;
+ align-items: center;
+ background-color: black;
+ padding: 20px;
+}
+
+button {
+  display:none;
+}
+
+.logo h1 {
+  color: red;
+  text-transform: uppercase;
+}
+
+.input_area {
+  width: 200px;
+  height: 30px;
+}
+
+.content{
+  min-height: 100vh;
+  background-color: grey;
+}
+
+.movies {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  text-align: center;
+  
+}
+
+.film>img {
+  height: 500px;
+  
+  
+  
+}
+
+.film {
+  width: calc(100% / 3);
+}

@@ -5,27 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Boolflix</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,700;1,400&display=swap">
   <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
 
-  <div class="input-part">
-    <input class="input_area"  type="text"placeholder="Cerca un film">
-  </div>
-  <button id="find">Search</button>
 
+  <main class="content">
 
-  <div class="container"></div>
-  <div class="movies">
+    <header class="style">
+      <div class="logo"><h1>Boolflix</h1></div>
+      <div class="input-part">
+        <input class="input_area"  type="text"placeholder="Cerca un film">
+      </div>
+      <button id="find">Search</button>
+    </header>
     
+  
+  
+    
+    <div class="movies">
       
+        
+  
+      
+    </div>
 
-    
-  </div>
+  </main>
 
+ 
+
+  
+  
+  
+  
+  
   <script id="film-template" type= "text/x-handlebars-template">
     <div class="film">
-      <img src="https://image.tmdb.org/t/p/w342{{ poster }}" alt="">
+      <img src="{{{ poster }}}" alt="cover">
       <ul class="list_film">
 
         <li> 
@@ -47,6 +64,10 @@
         <li> 
           <span>Tipologia:</span> 
           <span>{{ type }}</span>  
+        </li>
+        <li> 
+          <span>Descrizione:</span> 
+          <span>{{ description }}</span>  
         </li>
         
       
