@@ -16,7 +16,19 @@ body {
 .list_film {
   position: absolute;
   top: 0;
-  right: 20%;
+  left: 0;
+  list-style: none;
+  opacity: 0;
+  height: 500px;
+  width: 342px;
+}
+
+.list_film:hover {
+  opacity: 1;
+}
+
+.layover{
+  
 }
 
 .style {
@@ -46,21 +58,35 @@ button {
   background-color: grey;
 }
 
+.layover{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
 .movies {
   display: flex;
   flex-wrap: wrap;
   padding: 20px;
-  text-align: center;
+  justify-content: center;
   
 }
 
-.film>img {
+.film .container_lay img {
   height: 500px;
-  
-  
+  width: 342px;
+  display: block;
   
 }
 
 .film {
-  width: calc(100% / 3);
+  /* width: calc(100% / 3); */
+  position: relative;
+  margin: 20px;
+  
 }
+
+.film:hover .container_lay .layover {
+  background-color: rgba(255, 255, 255, .6)
+}
+

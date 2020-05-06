@@ -154,7 +154,7 @@ function print(template, films, movieList, type){
       average: stars(films[i].vote_average),
       type: type,
       poster: poster,
-      description: films[i].overview
+      description: films[i].overview.substring(1, 500)
       }
     
      
