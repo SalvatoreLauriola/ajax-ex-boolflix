@@ -25,6 +25,7 @@
 
   <script id="film-template" type= "text/x-handlebars-template">
     <div class="film">
+      <img src="https://image.tmdb.org/t/p/w342{{ poster }}" alt="">
       <ul class="list_film">
 
         <li> 
@@ -37,7 +38,7 @@
         </li>
         <li> 
           <span>Lingua:</span> 
-          <span>{{{ lang }}}</span>  
+          <span class="flag">{{{ lang }}}</span>  
         </li>
         <li> 
           <span>Media dei voti:</span> 
